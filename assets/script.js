@@ -1,27 +1,27 @@
-window.onload =function(){
 
-var questionBox = document.getElementsByClassName("topQuestion")
-var answerBox = document.getElementsByClassName("answers")
-var checker = document.getElementsByClassName("checker")
-var current = 0
 
-questionnaire = {
+var questionBox = document.getElementsByClassName("topQuestions");
+var answerBox = document.getElementsByClassName("answers");
+var checker = document.getElementsByClassName("checker");
+var current = 0;
 
-    "Which animal resides in Antartica?": ["Penguins", "Snakes", "Bears",0],
+var questionnaire = {
 
-    "What state does Georgia Tech reside?": ["Maine", "Georgia", "Texas",1],
+    "Which animal resides in Antartica?": ['Penguins', 'Snakes', 'Bears',0],
 
-    "A boolean is a true/false statement": ["False", "True",1]
+    "What state does Georgia Tech reside?": ['Maine', 'Georgia', 'Texas',1],
+
+    "A boolean is a true/false statement": ['False', 'True',1]
 };
-
+debugger
 function loadQuestion(curr) {
 
     var question = Object.keys(questionnaire)[curr];
 
     questionBox.innerHtml="";
     questionBox.innerHtml= question;
+    
 }
-
 debugger
 
 function loadAnswers(curr) {
@@ -36,7 +36,7 @@ function loadAnswers(curr) {
         createDiv.appendChild(text);
         createDiv.addEventListener("click",checkAnswer(i,answers));
 
-        answerBox.appendChild(createDiv);
+        answerBox[0].appendChild(createDiv);
     }
 }
 
@@ -80,4 +80,3 @@ function checker(boolean) {
 loadQuestion(current);
 loadAnswers(current);
 
-}
