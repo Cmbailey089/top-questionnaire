@@ -1,6 +1,6 @@
 window.onload =function(){
 
-var questionBox = document.getElementsByClassName("Question")
+var questionBox = document.getElementsByClassName("topQuestion")
 var answerBox = document.getElementsByClassName("answers")
 var checker = document.getElementsByClassName("checker")
 var current = 0
@@ -22,6 +22,8 @@ function loadQuestion(curr) {
     questionBox.innerHtml= question;
 }
 
+debugger
+
 function loadAnswers(curr) {
     var answers = questionnaire[Object.keys(questionnaire)[curr]];
 
@@ -33,6 +35,7 @@ function loadAnswers(curr) {
 
         createDiv.appendChild(text);
         createDiv.addEventListener("click",checkAnswer(i,answers));
+
         answerBox.appendChild(createDiv);
     }
 }
