@@ -38,20 +38,24 @@
 }
 
 
-.button div {
+.answers div {
     padding: 10px 0 0 0;
     font-size: small;
 }
 
-.button {
+.answers {
     padding: 0px 0 10px 0px;
 }
 
-.button div {
+.answers div {
     width:50%;
-    margin:auto;
+    margin:  0 auto;
     padding-bottom: 15px;
     border-top: 1px solid;
+}
+
+.answers div:first-child {
+    border: none;
 }
 
 .checker {
