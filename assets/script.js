@@ -81,6 +81,12 @@ function checkerAns(boolean) {
     }
 };
 
+var begin =document.getElementById("begin");
+begin.addEventListener("click",startGame);
+
+function startGame() {
+    
 loadQuestion(current);
 loadAnswers(current);
 
+}
