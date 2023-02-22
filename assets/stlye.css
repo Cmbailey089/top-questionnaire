@@ -7,7 +7,7 @@
 }
 
 .Box {
-    width: 300px;
+    width: 500px;
     margin:0 auto;
     height: 100%;
     padding-top: 0px;
@@ -15,10 +15,10 @@
 
 #question {
     width: auto;
-    background-color: #34495e;
-    padding-bottom: 60px;
+    background-color: transparent;
+    padding-bottom: 30px;
     text-align: center;
-    color: #fff;
+   
 
 }
 
@@ -40,7 +40,8 @@
 
 .answers div {
     padding: 10px 0 0 0;
-    font-size: small;
+    font-size: medium;
+    
 }
 
 .answers {
@@ -51,7 +52,11 @@
     width:50%;
     margin:  0 auto;
     padding-bottom: 15px;
-    border-top: 1px solid;
+    border: 0px;
+}
+
+.answers div:hover{
+    cursor: pointer;
 }
 
 .answers div:first-child {

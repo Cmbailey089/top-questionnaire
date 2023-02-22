@@ -1,8 +1,8 @@
 
 
-var questionBox = document.getElementsByClassName("topQuestions");
-var answerBox = document.getElementsByClassName("answers");
-var checker = document.getElementsByClassName("checker");
+var questionBox = document.getElementsByClassName("topQuestions")[0];
+var answerBox = document.getElementsByClassName("answers")[0];
+var checker = document.getElementsByClassName("checker")[0];
 var current = 0;
 
 var questionnaire = {
@@ -12,20 +12,20 @@ var questionnaire = {
     "What state does Georgia Tech reside?": ['Maine', 'Georgia', 'Texas',1],
 
     "A boolean is a true/false statement": ['False', 'True',1]
-};
-debugger
-function loadQuestion(curr) {
+}
 
-    var question = Object.keys(questionnaire)[curr];
+function loadQuestion(current) {
+
+    var question = Object.keys(questionnaire)[current];
 
     questionBox.innerHtml="";
     questionBox.innerHtml= question;
     
 }
-debugger
 
-function loadAnswers(curr) {
-    var answers = questionnaire[Object.keys(questionnaire)[curr]];
+
+function loadAnswers(current) {
+    var answers = questionnaire[Object.keys(questionnaire)[current]];
 
     answerBox.innerHtml="";
 
@@ -36,18 +36,22 @@ function loadAnswers(curr) {
         createDiv.appendChild(text);
         createDiv.addEventListener("click",checkAnswer(i,answers));
 
-        answerBox[0].appendChild(createDiv);
-    }
+        answerBox.appendChild(createDiv);
+    };
 }
+
+
+
 
 function checkAnswer(i,arr) {
     return function(){  
-        var userAnswer=arr[arr.length-1];
+        var userAnswer=i
+        correctAnswer=arr[arr.length-1];
 
         if (userAnswer===correctAnswer){
-            checker(true);
+            checkerAns(true);
         } else {
-            checker(false);
+            checkerAns(false);
         }
 
         if (current<Object.keys(questionnaire).length-1){
@@ -62,7 +66,7 @@ function checkAnswer(i,arr) {
     };
 }
 
-function checker(boolean) {
+function checkerAns(boolean) {
     var createDiv=document.createElement("div"),
     text = document.createTextNode(current+1);
 
@@ -75,7 +79,7 @@ function checker(boolean) {
         createDiv.className+="Wrong";
         checker.appendChild(createDiv);
     }
-}
+};
 
 loadQuestion(current);
 loadAnswers(current);
